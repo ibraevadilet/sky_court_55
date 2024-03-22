@@ -49,7 +49,7 @@ class _CkyOnBordingState extends State<CkyOnBording> {
                 margin: EdgeInsets.symmetric(horizontal: 24.r),
                 padding: EdgeInsets.all(24.r),
                 width: MediaQuery.of(context).size.width,
-                height: 340.h,
+                height: 370.h,
                 decoration: BoxDecoration(
                   color: Colors.black.withOpacity(0.6),
                   borderRadius: BorderRadius.circular(20),
