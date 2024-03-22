@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sky_court/programs/program_all.dart';
+import 'package:sky_court/programs/program_content.dart';
 
 class ProgramsPage extends StatelessWidget {
   const ProgramsPage({super.key});
@@ -17,8 +19,54 @@ class ProgramsPage extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      body: const Column(
-        children: [],
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.r),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 20.h),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProgramAll(title: 'Basic skills', list: listBasic),
+                    ),
+                  );
+                },
+                child: Image.asset('assets/images/trn1.png'),
+              ),
+              SizedBox(height: 20.h),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProgramAll(
+                          title: 'Physical training', list: listPhysics),
+                    ),
+                  );
+                },
+                child: Image.asset('assets/images/trn2.png'),
+              ),
+              SizedBox(height: 20.h),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProgramAll(title: 'Tactics', list: listTactics),
+                    ),
+                  );
+                },
+                child: Image.asset('assets/images/trn3.png'),
+              ),
+              SizedBox(height: 20.h),
+            ],
+          ),
+        ),
       ),
     );
   }

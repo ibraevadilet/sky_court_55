@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class RulesAll extends StatelessWidget {
   const RulesAll({super.key});
@@ -9,7 +11,6 @@ class RulesAll extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        centerTitle: false,
         title: const Text('Basketball rules'),
         titleTextStyle: TextStyle(
           fontSize: 20.h,
@@ -18,12 +19,40 @@ class RulesAll extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.r),
-        child: const Column(
-          children: [],
+        child: ListView.separated(
+          padding: EdgeInsets.symmetric(vertical: 16.r),
+          shrinkWrap: true,
+          itemCount: listRules.length,
+          separatorBuilder: (context, index) => const SizedBox(height: 12),
+          itemBuilder: (context, index) => ClipRRect(
+            borderRadius: BorderRadius.circular(8.r),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.r),
+              child: CachedNetworkImage(
+                imageUrl: listRules[index],
+                width: MediaQuery.of(context).size.width,
+                height: 300.h,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300.h,
+                    child: Shimmer.fromColors(
+                      baseColor: Colors.grey.shade500,
+                      highlightColor: Colors.grey.shade200,
+                      child: Container(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
