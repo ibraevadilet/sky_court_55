@@ -17,7 +17,7 @@ class _ProgramsPageState extends State<ProgramsPage> {
 
   @override
   void initState() {
-    isPrem = asfasfasfafs.getBool('sdfsfafsa') ?? false;
+    isPrem = asdasfasfas.getBool('sdfsfafsa') ?? false;
     super.initState();
   }
 

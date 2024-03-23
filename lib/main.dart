@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/core/sky_onboarding.dart';
 
-
-late final SharedPreferences asfasfasfafs;
+late final SharedPreferences asdasfasfas;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  asfasfasfafs = await SharedPreferences.getInstance();
+  asdasfasfas = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
@@ -56,45 +57,38 @@ class _SecondPageState extends State<SecondPage> {
   _calmSplash() async {
     await Future.delayed(const Duration(milliseconds: 1407), () {});
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const CkyOnBording(),
-      ),
+    SharedPreferences.getInstance().then(
+      (prefs) async {
+        if (!prefs.containsKey('sdjfhsjhruhsjskdfjks')) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CkyOnBording(),
+            ),
+          );
+          prefs.setDouble('sdjfhsjhruhsjskdfjks', 83471658);
+          await Future.delayed(const Duration(seconds: 4));
+          try {
+            final InAppReview inAppReview = InAppReview.instance;
+
+            if (await inAppReview.isAvailable()) {
+              inAppReview.requestReview();
+            }
+          } catch (e) {
+            throw Exception(e);
+          }
+        } else {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BottomBar(
+                indexScr: 0,
+              ),
+            ),
+          );
+        }
+      },
     );
-
-    // SharedPreferences.getInstance().then(
-    //   (prefs) async {
-    //     if (!prefs.containsKey('sdjfhsjhruhsjskdfjks')) {
-    //       Navigator.pushReplacement(
-    //         context,
-    //         MaterialPageRoute(
-    //           builder: (context) => const CgOnBording(),
-    //         ),
-    //       );
-    //       prefs.setDouble('sdjfhsjhruhsjskdfjks', 83471658);
-    //       await Future.delayed(const Duration(seconds: 4));
-    //       try {
-    //         final InAppReview inAppReview = InAppReview.instance;
-
-    //         if (await inAppReview.isAvailable()) {
-    //           inAppReview.requestReview();
-    //         }
-    //       } catch (e) {
-    //         throw Exception(e);
-    //       }
-    //     } else {
-    //       Navigator.pushReplacement(
-    //         context,
-    //         MaterialPageRoute(
-    //           builder: (context) => const CgBottomBar(
-    //             indexScr: 0,
-    //           ),
-    //         ),
-    //       );
-    //     }
-    //   },
-    // );
   }
 
   @override

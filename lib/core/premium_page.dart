@@ -122,7 +122,7 @@ class PremiumPage extends StatelessWidget {
                     SizedBox(height: 38.h),
                     InkWell(
                       onTap: () {
-                        asfasfasfafs.setBool('sdfsfafsa', true);
+                        asdasfasfas.setBool('sdfsfafsa', true);
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
