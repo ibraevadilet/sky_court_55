@@ -87,8 +87,9 @@ class ProgramWidget extends StatelessWidget {
             ),
           ),
           Container(
+            padding: const EdgeInsets.only(left: 10),
             width: 240.w,
-            height: 48.h,
+            height: 80.h,
             decoration: BoxDecoration(
               color: const Color(0xffFF6B00).withOpacity(0.6),
               borderRadius: BorderRadius.circular(16),

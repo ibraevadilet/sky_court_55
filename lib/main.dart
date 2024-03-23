@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sky_court/core/sky_onboarding.dart';
 
-void main() {
+
+late final SharedPreferences asfasfasfafs;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  asfasfasfafs = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 

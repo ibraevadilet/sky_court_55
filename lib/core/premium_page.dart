@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sky_court/core/bottom_bar.dart';
+import 'package:sky_court/main.dart';
 
 class PremiumPage extends StatelessWidget {
   const PremiumPage({super.key, this.canPop = false});
@@ -120,7 +121,9 @@ class PremiumPage extends StatelessWidget {
                     ),
                     SizedBox(height: 38.h),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        asfasfasfafs.setBool('sdfsfafsa', true);
+                      },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 50.h,
