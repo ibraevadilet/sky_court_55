@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sky_court/core/premium_page.dart';
+import 'package:sky_court/sss/asdasassfas.dart';
+import 'package:sky_court/sss/tyurtyrg.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -24,7 +26,18 @@ class SettingsPage extends StatelessWidget {
           children: [
             SizedBox(height: 10.h),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AEgsfsfaa(
+                      title: 'Privacy Policy',
+                      url:
+                          'https://docs.google.com/document/d/1tgzW0JM-cLdn_Jvy7m5Xlk_NT0nGibZHJP-_SXTf9UQ/edit?usp=sharing',
+                    ),
+                  ),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.r,
@@ -64,7 +77,18 @@ class SettingsPage extends StatelessWidget {
             ),
             SizedBox(height: 25.h),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AEgsfsfaa(
+                      title: 'Term of use',
+                      url:
+                          'https://docs.google.com/document/d/1xdnzdrKgLteUCfhfoiVwiWcVYQZ28hWJcHCVsU92p-s/edit?usp=sharing',
+                    ),
+                  ),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.r,
@@ -104,7 +128,17 @@ class SettingsPage extends StatelessWidget {
             ),
             SizedBox(height: 25.h),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AEgsfsfaa(
+                      title: 'Support',
+                      url: 'https://forms.gle/mdmW3VDo1Mx4HF369',
+                    ),
+                  ),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.r,
@@ -144,7 +178,7 @@ class SettingsPage extends StatelessWidget {
             ),
             SizedBox(height: 25.h),
             InkWell(
-              onTap: () {},
+              onTap: () => kityuthbnd(context),
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.r,

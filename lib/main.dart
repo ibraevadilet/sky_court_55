@@ -5,11 +5,13 @@ import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/core/sky_onboarding.dart';
+import 'package:sky_court/sss/gnchgc.dart';
 
 late final SharedPreferences asdasfasfas;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await HETethgnrtr().yuturg();
   asdasfasfas = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }

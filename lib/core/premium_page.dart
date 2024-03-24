@@ -2,10 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/main.dart';
+import 'package:sky_court/sss/asdasassfas.dart';
+import 'package:sky_court/sss/gnchgc.dart';
+import 'package:sky_court/sss/tyurtyrg.dart';
 
-class PremiumPage extends StatelessWidget {
+class PremiumPage extends StatefulWidget {
   const PremiumPage({super.key, this.canPop = false});
   final bool canPop;
+
+  @override
+  State<PremiumPage> createState() => _PremiumPageState();
+}
+
+class _PremiumPageState extends State<PremiumPage> {
+  Future<void> afafasfafafafsasfgadgfh() async {
+    final learAdaPaywall = await HETethgnrtr().eryerhjth('placement_55-B');
+    if (learAdaPaywall == null) return;
+    final learAdaProducts = await HETethgnrtr().hgfhdgsbfngmh(learAdaPaywall);
+    if (learAdaProducts == null) return;
+
+    await HETethgnrtr().khgjfhdgsdhfjgh(learAdaProducts.first);
+  }
+
+  bool asfaf = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +49,7 @@ class PremiumPage extends StatelessWidget {
                   const Spacer(),
                   InkWell(
                     onTap: () {
-                      if (canPop) {
+                      if (widget.canPop) {
                         Navigator.pop(context);
                         return;
                       }
@@ -121,8 +140,28 @@ class PremiumPage extends StatelessWidget {
                     ),
                     SizedBox(height: 38.h),
                     InkWell(
-                      onTap: () {
-                        asdasfasfas.setBool('sdfsfafsa', true);
+                      onTap: () async {
+                        setState(() {
+                          asfaf = true;
+                        });
+                        await afafasfafafafsasfgadgfh();
+                        final hasPremiumStatusSmartTrader =
+                            await HETethgnrtr().ertfger();
+                        if (hasPremiumStatusSmartTrader) {
+                          await asdasfasfas.setBool('sdfsfafsa', true);
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const BottomBar(),
+                            ),
+                            (route) => false,
+                          );
+                        }
+                        setState(() {
+                          asfaf = false;
+                        });
+
+                        // asdasfasfas.setBool('sdfsfafsa', true);
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
@@ -151,7 +190,18 @@ class PremiumPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AEgsfsfaa(
+                            title: 'Term of Service',
+                            url:
+                                'https://docs.google.com/document/d/1xdnzdrKgLteUCfhfoiVwiWcVYQZ28hWJcHCVsU92p-s/edit?usp=sharing',
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Term of Service',
                       style: TextStyle(
@@ -162,7 +212,7 @@ class PremiumPage extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () => kityuthbnd(context),
                     child: Text(
                       'Restore',
                       style: TextStyle(
@@ -173,7 +223,18 @@ class PremiumPage extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AEgsfsfaa(
+                            title: 'Privacy Policy',
+                            url:
+                                'https://docs.google.com/document/d/1tgzW0JM-cLdn_Jvy7m5Xlk_NT0nGibZHJP-_SXTf9UQ/edit?usp=sharing',
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Privacy Policy',
                       style: TextStyle(

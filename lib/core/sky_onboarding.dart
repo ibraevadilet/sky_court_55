@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sky_court/core/premium_page.dart';
+import 'package:sky_court/sss/asdasassfas.dart';
+import 'package:sky_court/sss/tyurtyrg.dart';
 
 class CkyOnBording extends StatefulWidget {
   const CkyOnBording({
@@ -153,7 +155,18 @@ class _CkyOnBordingState extends State<CkyOnBording> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AEgsfsfaa(
+                            title: 'Term of Service',
+                            url:
+                                'https://docs.google.com/document/d/1xdnzdrKgLteUCfhfoiVwiWcVYQZ28hWJcHCVsU92p-s/edit?usp=sharing',
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Term of Service',
                       style: TextStyle(
@@ -164,7 +177,7 @@ class _CkyOnBordingState extends State<CkyOnBording> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () => kityuthbnd(context),
                     child: Text(
                       'Restore',
                       style: TextStyle(
@@ -175,7 +188,18 @@ class _CkyOnBordingState extends State<CkyOnBording> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AEgsfsfaa(
+                            title: 'Privacy Policy',
+                            url:
+                                'https://docs.google.com/document/d/1tgzW0JM-cLdn_Jvy7m5Xlk_NT0nGibZHJP-_SXTf9UQ/edit?usp=sharing',
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Privacy Policy',
                       style: TextStyle(
