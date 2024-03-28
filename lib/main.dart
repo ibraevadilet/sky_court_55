@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:in_app_review/in_app_review.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sky_court/core/bottom_bar.dart';
-import 'package:sky_court/core/sky_onboarding.dart';
+import 'package:sky_court/sky/sky.dart';
+import 'package:sky_court/sky/sky_local_object.dart';
 import 'package:sky_court/sss/gnchgc.dart';
 
 late final SharedPreferences asdasfasfas;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  OneSignal.initialize('6abb2e0f-18b6-47e5-8258-53853e1b27d5');
+  await OneSignal.Notifications.requestPermission(true);
+  await Hive.initFlutter();
+  Hive.registerAdapter(SkyLocalModelAdapter());
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await HETethgnrtr().yuturg();
   asdasfasfas = await SharedPreferences.getInstance();
@@ -53,44 +58,7 @@ class _SecondPageState extends State<SecondPage> {
   @override
   void initState() {
     super.initState();
-    _calmSplash();
-  }
-
-  _calmSplash() async {
-    await Future.delayed(const Duration(milliseconds: 1407), () {});
-
-    SharedPreferences.getInstance().then(
-      (prefs) async {
-        if (!prefs.containsKey('sdjfhsjhruhsjskdfjks')) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CkyOnBording(),
-            ),
-          );
-          prefs.setDouble('sdjfhsjhruhsjskdfjks', 83471658);
-          await Future.delayed(const Duration(seconds: 4));
-          try {
-            final InAppReview inAppReview = InAppReview.instance;
-
-            if (await inAppReview.isAvailable()) {
-              inAppReview.requestReview();
-            }
-          } catch (e) {
-            throw Exception(e);
-          }
-        } else {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const BottomBar(
-                indexScr: 0,
-              ),
-            ),
-          );
-        }
-      },
-    );
+    sky(context, (p0) {});
   }
 
   @override
