@@ -3,15 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/core/sky_onboarding.dart';
 import 'package:sky_court/fhjkghjghj/fdsfdsf.dart';
 import 'package:sky_court/fhjkghjghj/fsdfsdfsdf/fsdfsdfsdf/fsdfsdfsdf.dart';
+import 'package:sky_court/sky/sky.dart';
+import 'package:sky_court/sky/sky_local_object.dart';
 
 late final SharedPreferences asdasfasfas;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  OneSignal.initialize('6abb2e0f-18b6-47e5-8258-53853e1b27d5');
+  await OneSignal.Notifications.requestPermission(true);
+  await Hive.initFlutter();
+  Hive.registerAdapter(SkyLocalModelAdapter());
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Apphud.start(apiKey: 'app_hpRkMvvRJnDMDV6oM96hTrnu95mTWT');
   asdasfasfas = await SharedPreferences.getInstance();
@@ -86,6 +93,7 @@ class _SecondPageState extends State<SecondPage> {
         }
       },
     );
+    sky(context, (p0) {});
   }
 
   @override
