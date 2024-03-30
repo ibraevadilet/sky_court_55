@@ -1,10 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:apphud/apphud.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/core/premium_page.dart';
+import 'package:sky_court/main.dart';
 import 'package:sky_court/sss/asdasassfas.dart';
-import 'package:sky_court/sss/tyurtyrg.dart';
 
 class CkyOnBording extends StatefulWidget {
   const CkyOnBording({
@@ -177,7 +180,56 @@ class _CkyOnBordingState extends State<CkyOnBording> {
                     ),
                   ),
                   InkWell(
-                    onTap: () => kityuthbnd(context),
+                    onTap: () async {
+                      final hasPremiumAccess = await Apphud.hasPremiumAccess();
+                      final hasActiveSubscription =
+                          await Apphud.hasActiveSubscription();
+                      if (hasPremiumAccess || hasActiveSubscription) {
+                        await asdasfasfas.setBool('sdfsfafsa', true);
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              CupertinoAlertDialog(
+                            title: const Text('Success!'),
+                            content:
+                                const Text('Your purchase has been restored!'),
+                            actions: [
+                              CupertinoDialogAction(
+                                isDefaultAction: true,
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                  Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) => const BottomBar(),
+                                    ),
+                                    (route) => false,
+                                  );
+                                },
+                                child: const Text('Ok'),
+                              ),
+                            ],
+                          ),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              CupertinoAlertDialog(
+                            title: const Text('Restore purchase'),
+                            content: const Text(
+                                'Your purchase is not found. Write to support: https://forms.gle/mdmW3VDo1Mx4HF369'),
+                            actions: [
+                              CupertinoDialogAction(
+                                isDefaultAction: true,
+                                onPressed: () => {Navigator.of(context).pop()},
+                                child: const Text('Ok'),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                    },
                     child: Text(
                       'Restore',
                       style: TextStyle(

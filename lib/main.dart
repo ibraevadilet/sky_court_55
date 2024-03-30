@@ -1,19 +1,23 @@
+import 'package:apphud/apphud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:in_app_review/in_app_review.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sky_court/core/bottom_bar.dart';
 import 'package:sky_court/core/sky_onboarding.dart';
-import 'package:sky_court/sss/gnchgc.dart';
+import 'package:sky_court/fhjkghjghj/fdsfdsf.dart';
+import 'package:sky_court/fhjkghjghj/fsdfsdfsdf/fsdfsdfsdf/fsdfsdfsdf.dart';
 
 late final SharedPreferences asdasfasfas;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  await HETethgnrtr().yuturg();
+  await Apphud.start(apiKey: 'app_hpRkMvvRJnDMDV6oM96hTrnu95mTWT');
   asdasfasfas = await SharedPreferences.getInstance();
-  runApp(const MyApp());
+  await Hive.initFlutter();
+  Hive.registerAdapter(NewPosterModelAdapter());
+  await startLogic();
 }
 
 class MyApp extends StatelessWidget {
@@ -70,15 +74,6 @@ class _SecondPageState extends State<SecondPage> {
           );
           prefs.setDouble('sdjfhsjhruhsjskdfjks', 83471658);
           await Future.delayed(const Duration(seconds: 4));
-          try {
-            final InAppReview inAppReview = InAppReview.instance;
-
-            if (await inAppReview.isAvailable()) {
-              inAppReview.requestReview();
-            }
-          } catch (e) {
-            throw Exception(e);
-          }
         } else {
           Navigator.pushReplacement(
             context,
