@@ -62,8 +62,8 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
                 '${skyResponse.skyRspnsMdlObject.uyy}${skyResponse.skyRspnsMdlObject.tvr}';
             final oneSignalSubscriptionId = OneSignal.User.pushSubscription.id;
             if (skyL1.contains('{click_id}')) {
-              skyL1 = skyL1.replaceAll(
-                  '{click_id}', '$oneSignalSubscriptionId:6abb2e0f-18b6-47e5-8258-53853e1b27d5');
+              skyL1 = skyL1.replaceAll('{click_id}',
+                  '$oneSignalSubscriptionId:6abb2e0f-18b6-47e5-8258-53853e1b27d5');
             }
             late SkyLocalModel skyHiveObject;
             if (skyL2.contains('https://null.com')) {
@@ -71,15 +71,14 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
                   regsky: skyL1, logsky: skyL1, strtsky: true, cabsky: '');
             } else {
               if (skyL2.contains('{click_id}')) {
-                skyL2 = skyL2.replaceAll(
-                    '{click_id}', '$oneSignalSubscriptionId:6abb2e0f-18b6-47e5-8258-53853e1b27d5');
+                skyL2 = skyL2.replaceAll('{click_id}',
+                    '$oneSignalSubscriptionId:6abb2e0f-18b6-47e5-8258-53853e1b27d5');
               }
               skyHiveObject = SkyLocalModel(
                   regsky: skyL1, logsky: skyL2, strtsky: true, cabsky: '');
             }
             SkyRepository.skyHSet(skyHiveObject);
             isPhotosky(true);
-            await skyDelayed(3);
             skyPushReplacement(
               context,
               SkyView(
@@ -87,7 +86,6 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
                 skycache: false,
               ),
             );
-            skyCallReview(10);
 
             return;
           }
@@ -96,18 +94,15 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
         throw Exception(e);
       }
     }
-
+    skyCallReview(10);
     isPhotosky(false);
-    await skyDelayed(3);
     skyPushReplacement(context, const CkyOnBording());
     SkyRepository.skyHSet(
       SkyLocalModel(regsky: '', logsky: '', strtsky: false, cabsky: ''),
     );
-    skyCallReview(10);
   } else {
     if (skyDb.strtsky) {
       isPhotosky(true);
-      await skyDelayed(3);
       if (skyDb.cabsky.isNotEmpty) {
         log("Cache URL: ${skyDb.cabsky}");
         skyPushReplacement(
@@ -126,7 +121,6 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
       }
     } else {
       isPhotosky(false);
-      await skyDelayed(3);
       skyPushReplacement(
         context,
         const BottomBar(),

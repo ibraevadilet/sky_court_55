@@ -64,48 +64,13 @@ class _SecondPageState extends State<SecondPage> {
   @override
   void initState() {
     super.initState();
-    _calmSplash();
-  }
-
-  _calmSplash() async {
-    await Future.delayed(const Duration(milliseconds: 1407), () {});
-
-    SharedPreferences.getInstance().then(
-      (prefs) async {
-        if (!prefs.containsKey('sdjfhsjhruhsjskdfjks')) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CkyOnBording(),
-            ),
-          );
-          prefs.setDouble('sdjfhsjhruhsjskdfjks', 83471658);
-          await Future.delayed(const Duration(seconds: 4));
-        } else {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const BottomBar(
-                indexScr: 0,
-              ),
-            ),
-          );
-        }
-      },
-    );
     sky(context, (p0) {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Image.asset(
-          'assets/images/logo.png',
-          width: 100.w,
-        ),
-      ),
+      backgroundColor: Colors.white,
     );
   }
 }
