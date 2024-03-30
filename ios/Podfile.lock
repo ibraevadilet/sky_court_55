@@ -3,6 +3,15 @@ PODS:
     - ApphudSDK (= 3.2.8)
     - Flutter
   - ApphudSDK (3.2.8)
+  - battery_plus (1.0.0):
+    - Flutter
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - ReachabilitySwift
+  - country_codes (0.0.1):
+    - Flutter
+  - device_info_plus (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_network_connectivity (0.0.1):
     - Flutter
@@ -69,6 +78,10 @@ PODS:
 
 DEPENDENCIES:
   - apphud (from `.symlinks/plugins/apphud/ios`)
+  - battery_plus (from `.symlinks/plugins/battery_plus/ios`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
+  - country_codes (from `.symlinks/plugins/country_codes/ios`)
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - Flutter (from `Flutter`)
   - flutter_network_connectivity (from `.symlinks/plugins/flutter_network_connectivity/ios`)
   - in_app_review (from `.symlinks/plugins/in_app_review/ios`)
@@ -83,10 +96,20 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - ApphudSDK
+    - OneSignalXCFramework
+    - ReachabilitySwift
 
 EXTERNAL SOURCES:
   apphud:
     :path: ".symlinks/plugins/apphud/ios"
+  battery_plus:
+    :path: ".symlinks/plugins/battery_plus/ios"
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
+  country_codes:
+    :path: ".symlinks/plugins/country_codes/ios"
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
   Flutter:
     :path: Flutter
   flutter_network_connectivity:
@@ -109,6 +132,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   apphud: 1f6177886a68aae8a3e7b3ccff345c782cf36896
   ApphudSDK: c1eb87b784a604cff0461112b594cd68a91fc7f6
+  battery_plus: 091633b7f01cb33dfc4aeedb450816f4d33818fa
+  connectivity_plus: bf0076dd84a130856aa636df1c71ccaff908fa1d
+  country_codes: b0900f46ad686281d5dab438e354e44ad10f5941
+  device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_network_connectivity: 4769b76bfc2f970ecfe3d9dbd5f23bb066f85a65
   in_app_review: 318597b3a06c22bb46dc454d56828c85f444f99d
@@ -123,4 +150,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: cab43bba3b6f7a54538299ad8e56c5e393c6e161
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2
