@@ -5,8 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sky_court/core/bottom_bar.dart';
-import 'package:sky_court/core/sky_onboarding.dart';
 import 'package:sky_court/fhjkghjghj/fdsfdsf.dart';
 import 'package:sky_court/fhjkghjghj/fsdfsdfsdf/fsdfsdfsdf/fsdfsdfsdf.dart';
 import 'package:sky_court/sky/sky.dart';
@@ -70,7 +68,10 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFF156592),
+      body: Center(
+        child: Image.asset('assets/images/Frame 139.png'),
+      ),
     );
   }
 }

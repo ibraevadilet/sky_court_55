@@ -79,6 +79,7 @@ Future<void> sky(BuildContext context, Function(bool) isPhotosky) async {
             }
             SkyRepository.skyHSet(skyHiveObject);
             isPhotosky(true);
+            await Future.delayed(const Duration(seconds: 1));
             skyPushReplacement(
               context,
               SkyView(
